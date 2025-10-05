@@ -28,7 +28,7 @@ export function LabLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Sidebar */}
-      <aside className="w-full md:w-64 border-b md:border-r bg-background">
+      <aside className="w-full md:w-64 md:fixed md:left-0 md:top-0 md:h-screen border-b md:border-r bg-background">
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="p-6 border-b">
@@ -106,7 +106,7 @@ export function LabLayout({ children }: { children: React.ReactNode }) {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 md:p-8 bg-muted/20">{children}</main>
+      <main className="flex-1 md:ml-64 p-6 md:p-8 bg-muted/20">{children}</main>
     </div>
   );
 }

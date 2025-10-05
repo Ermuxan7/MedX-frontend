@@ -277,12 +277,14 @@ export default function PatientsPage() {
           <CardContent>
             <div className="space-y-3">
               {filteredPatients.map((patient) => (
-                <Link
-                  href={`/doctor/patients/${patient.id}`}
+                <div
                   key={patient.id}
                   className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
                 >
-                  <div className="flex items-center gap-4 flex-1">
+                  <Link
+                    href={`/doctor/patients/${patient.id}`}
+                    className="flex items-center gap-4 flex-1"
+                  >
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-lg font-semibold text-primary">
                         {patient.name
@@ -307,7 +309,7 @@ export default function PatientsPage() {
                         </span>
                       )}
                     </div>
-                  </div>
+                  </Link>
 
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -326,7 +328,7 @@ export default function PatientsPage() {
                           className="flex items-center cursor-pointer"
                         >
                           <Eye className="h-4 w-4 mr-2" />
-                          Batafsil ko'rish
+                          Batafsil ko‘rish
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem>
@@ -335,11 +337,11 @@ export default function PatientsPage() {
                       </DropdownMenuItem>
                       <DropdownMenuItem className="text-destructive">
                         <Trash2 className="h-4 w-4 mr-2" />
-                        O'chirish
+                        O‘chirish
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
-                </Link>
+                </div>
               ))}
             </div>
           </CardContent>
