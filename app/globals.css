@@ -10,13 +10,17 @@
   --card-foreground: oklch(0.2 0.02 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.02 240);
-  --primary: oklch(0.63 0.17 235); /* Updated primary color to brighter blue #0097ED */
+  --primary: oklch(
+    0.63 0.17 235
+  ); /* Updated primary color to brighter blue #0097ED */
   --primary-foreground: oklch(0.99 0.005 240);
   --secondary: oklch(0.92 0.02 240);
   --secondary-foreground: oklch(0.25 0.03 240);
   --muted: oklch(0.95 0.01 240);
   --muted-foreground: oklch(0.5 0.02 240);
-  --accent: oklch(0.68 0.19 225); /* Updated accent color to complement new primary */
+  --accent: oklch(
+    0.68 0.19 225
+  ); /* Updated accent color to complement new primary */
   --accent-foreground: oklch(0.99 0.005 240);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.005 240);
@@ -31,12 +35,16 @@
   --radius: 0.625rem;
   --sidebar: oklch(0.97 0.01 240);
   --sidebar-foreground: oklch(0.25 0.03 240);
-  --sidebar-primary: oklch(0.63 0.17 235); /* Updated sidebar primary to match new primary */
+  --sidebar-primary: oklch(
+    0.63 0.17 235
+  ); /* Updated sidebar primary to match new primary */
   --sidebar-primary-foreground: oklch(0.99 0.005 240);
   --sidebar-accent: oklch(0.92 0.02 240);
   --sidebar-accent-foreground: oklch(0.25 0.03 240);
   --sidebar-border: oklch(0.88 0.015 240);
-  --sidebar-ring: oklch(0.63 0.17 235); /* Updated sidebar ring to match new primary */
+  --sidebar-ring: oklch(
+    0.63 0.17 235
+  ); /* Updated sidebar ring to match new primary */
 }
 
 .dark {
@@ -66,7 +74,9 @@
   --chart-5: oklch(0.5 0.12 260);
   --sidebar: oklch(0.18 0.02 240);
   --sidebar-foreground: oklch(0.95 0.01 240);
-  --sidebar-primary: oklch(0.68 0.19 225); /* Updated dark mode sidebar primary */
+  --sidebar-primary: oklch(
+    0.68 0.19 225
+  ); /* Updated dark mode sidebar primary */
   --sidebar-primary-foreground: oklch(0.15 0.02 240);
   --sidebar-accent: oklch(0.25 0.03 240);
   --sidebar-accent-foreground: oklch(0.95 0.01 240);
@@ -121,4 +131,30 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.68 0.19 225);
+}
+
+/* Firefox uchun */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--primary) var(--muted);
 }

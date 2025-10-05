@@ -263,7 +263,7 @@ export default function PatientsPage() {
                   className="pl-9"
                 />
               </div>
-              <Button>Qidirish</Button>
+              {/* <Button>Qidirish</Button> */}
             </div>
           </CardContent>
         </Card>
@@ -271,8 +271,8 @@ export default function PatientsPage() {
         {/* Patients List */}
         <Card>
           <CardHeader>
-            <CardTitle>So'nggi bemorlar</CardTitle>
-            <CardDescription>Yaqinda ko'rgan bemorlaringiz</CardDescription>
+            <CardTitle>Barcha bemorlar</CardTitle>
+            {/* <CardDescription>Yaqinda ko'rgan bemorlaringiz</CardDescription> */}
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
@@ -314,6 +314,7 @@ export default function PatientsPage() {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button
+                        type="button"
                         variant="ghost"
                         size="icon"
                         className="h-8 w-8 flex-shrink-0"
@@ -321,7 +322,8 @@ export default function PatientsPage() {
                         <MoreVertical className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
+
+                    <DropdownMenuContent align="end" className="z-50">
                       <DropdownMenuItem asChild>
                         <Link
                           href={`/doctor/patients/${patient.id}`}
@@ -331,10 +333,12 @@ export default function PatientsPage() {
                           Batafsil ko‘rish
                         </Link>
                       </DropdownMenuItem>
+
                       <DropdownMenuItem>
                         <Edit className="h-4 w-4 mr-2" />
                         Tahrirlash
                       </DropdownMenuItem>
+
                       <DropdownMenuItem className="text-destructive">
                         <Trash2 className="h-4 w-4 mr-2" />
                         O‘chirish
